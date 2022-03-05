@@ -20,9 +20,6 @@ export class AppComponent {
 
   constructor() {
     this.dataSource$ = this.getData();
-    // this.dataSource$.subscribe(
-    //   next => console.log('next', next)
-    // )
   }
 
   getData(): Observable<Route[]> {
@@ -34,30 +31,22 @@ export class AppComponent {
       tap(v => console.log(v)),
       map(data =>
         data.sort((a, b) => {
-          // console.log(itemId)
           if (itemId === 'address' || itemId === 'interface' || itemId === 'gateway')
             return a[itemId] > b[itemId] ? 1 : -1;
           return 0
         })
       )
     )
-    // this.buttonClicked$.unsubscribe();
-    // this.dataSource$.subscribe(
-    //  next => console.log('subscribe')
-    // )
   }
 
   ngOnInit() {
-    // this.dataSource$ = this.getData();
     this.buttonClicked$.subscribe((itemId) => {
       this.sort(itemId)
-      // console.log('subscribe')
     });
   }
 
   public getItem(itemId: string) {
     this.buttonClicked$.next(itemId);
-    // console.log("hi")
   }
 
 }
