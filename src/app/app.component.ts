@@ -31,7 +31,12 @@ export class AppComponent {
       tap(v => console.log(v)),
       map(data =>
         data.sort((a, b) => {
-          if (itemId === 'address' || itemId === 'interface' || itemId === 'gateway')
+          if (itemId === 'address' || itemId === 'gateway') {
+            const num1 = Number(a[itemId].split('.').map(n => (`000${n}`).slice(-3)).join(''));
+            const num2 = Number(b[itemId].split('.').map(n => (`000${n}`).slice(-3)).join(''));
+            return num1 - num2;
+          }
+          if (itemId === 'interface')
             return a[itemId] > b[itemId] ? 1 : -1;
           return 0
         })
