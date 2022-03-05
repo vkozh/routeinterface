@@ -1,12 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { Route } from './Route';
 import { routes } from './routes';
-// import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 import { pipe, map, fromEvent, switchAll, Observable } from 'rxjs';
 import { Subject, of, tap, from } from 'rxjs';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { ContentObserver } from '@angular/cdk/observers';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +24,6 @@ export class AppComponent {
 
   sort(itemId: string) {
     this.dataSource$ = this.getData().pipe(
-      tap(v => console.log(v)),
       map(data =>
         data.sort((a, b) => {
           if (itemId === 'address' || itemId === 'gateway') {
