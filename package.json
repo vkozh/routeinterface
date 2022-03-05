@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --prod --base-href https://vkozh.github.io/routeinterface/ && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng deploy routeinterface --base-href https://vkozh.github.io/routeinterface/"
 
   },
   "private": true,
