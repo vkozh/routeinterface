@@ -1,4 +1,19 @@
 # Routeinterface
+Learning RXJS: my first stream and subscripton
+
+[Github Page](https://vkozh.github.io/routeinterface/)
+
+
+## Features:
+- Sorting table
+
+## Tools
+- TypeScript
+- RXJS
+
+
+
+# Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
